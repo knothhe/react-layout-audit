@@ -1,0 +1,59 @@
+{
+  "name": "@knothhe/react-layout-audit",
+  "version": "0.1.0",
+  "description": "DOM layout inspector for React: box model, clipping, A/B spacing and alignment overlays.",
+  "keywords": [
+    "react",
+    "layout",
+    "inspector",
+    "redlines",
+    "spacing",
+    "devtools"
+  ],
+  "homepage": "https://github.com/knothhe/react-layout-audit#readme",
+  "bugs": {
+    "url": "https://github.com/knothhe/react-layout-audit/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knothhe/react-layout-audit.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "pnpm run typecheck && pnpm test && pnpm run build",
+    "prepack": "pnpm run build",
+    "prepublishOnly": "pnpm run typecheck && pnpm test"
+  },
+  "peerDependencies": {
+    "react": ">=18.3.0",
+    "react-dom": ">=18.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "jsdom": "^30.1.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^7.0.2",
+    "vitest": "5.0.5"
+  },
+  "packageManager": "pnpm@12.11.2"
+}
